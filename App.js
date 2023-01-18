@@ -5,17 +5,17 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
+import WebScreen from './screens/WebScreen';
 import DownloadingScreen from './screens/DownloadingScreen';
-import MainScreen from './screens/MainScreen';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='ChilMate'>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
-          name="ChillMate"
+          name="Home"
           // screenOptions={{
           //   headerShown: false
           // }}
@@ -23,12 +23,12 @@ function App() {
           component={HomeScreen}
         />
         <Stack.Screen
-          name="Main"
+          name="Web"
           // screenOptions={{
           //   headerShown: false
           // }}
           options={{ headerShown: false }}
-          component={MainScreen}
+          component={WebScreen}
         />
         <Stack.Screen name="Donwloading" component={DownloadingScreen} />
       </Stack.Navigator>
